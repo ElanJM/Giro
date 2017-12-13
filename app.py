@@ -209,7 +209,7 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, carousel_template_message)
         return 0
-    if event.message.text == "Giro", "giro":
+    if event.message.text == "Giro":
         buttons_template_message = TemplateSendMessage(
             alt_text='Buttons template',
             template=ButtonsTemplate(
