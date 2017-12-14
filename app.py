@@ -155,7 +155,7 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    if event.message.text == "Help":
+    if event.message.text == "1":
         carousel_template_message = TemplateSendMessage(
             alt_text='Carousel template',
             template=CarouselTemplate(
@@ -222,26 +222,25 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, carousel_template_message)
         return 0
-    if event.message.text == "Giro":
+    if event.message.text == "Help":
         buttons_template_message = TemplateSendMessage(
             alt_text='Buttons template',
             template=ButtonsTemplate(
                 thumbnail_image_url='https://i.ytimg.com/vi/opKg3fyqWt4/hqdefault.jpg',
-                title='Menu',
+                title='Help List',
                 text='Please select',
                 actions=[
-                    PostbackTemplateAction(
-                        label='postback',
-                        text='postback text',
-                        data='action=buy&itemid=1'
+                    URITemplateAction(
+                        label='I cant withdraw',
+                        uri='https://digiro.in/'
                     ),
                     MessageTemplateAction(
-                        label='message',
-                        text='message text'
+                        label='App Crash',
+                        text='My app crash'
                     ),
                     URITemplateAction(
-                        label='uri',
-                        uri='http://google.com/'
+                        label='Others',
+                        uri='https://digiro.in'
                     )
                 ]
             )
