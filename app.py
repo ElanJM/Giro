@@ -228,7 +228,7 @@ def handle_message(event):
             template=ButtonsTemplate(
                 thumbnail_image_url='https://i.ytimg.com/vi/opKg3fyqWt4/hqdefault.jpg',
                 title='Menu',
-                text='Please select'
+                text='Please select',
                 actions=[
                     PostbackTemplateAction(
                         label='postback',
