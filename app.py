@@ -313,6 +313,13 @@ def handle_message(event):
             )
         )
         line_bot_api.reply_message(event.reply_token, carousel_template_message)
+        return 0
+    if event.text.message == "Hi":
+        text_message=TextSendMessage(
+            alt_text='Test',
+            text='hey there'
+        )
+        line_bot_api.reply_message(event.reply_token, text_message)
 
 
 if __name__ == '__main__':
